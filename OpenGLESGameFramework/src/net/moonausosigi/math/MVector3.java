@@ -1,6 +1,6 @@
 package net.moonausosigi.math;
 
-
+// JAVA???�산???�버로딩??�?��?��? ?�는??
 public class MVector3 {
 
 	public float x = 0f;
@@ -10,6 +10,9 @@ public class MVector3 {
 	public MVector3(){}
 	public MVector3(MVector3 v){ this.x = v.x; this.y = v.y; this.z = v.z; }
 	public MVector3(float x,float y,float z){ this.x = x ; this.y = y; this.z = z; }
+	
+	public static MVector3 Zero() { return new MVector3(0.0f,0.0f,0.0f); }
+	public static MVector3 One() { return new MVector3(1.0f,1.0f,1.0f); }
 
 	public float Scale(){ return (float)Math.sqrt(x*x + y*y + z*z); } // |V|
 	
@@ -25,6 +28,13 @@ public class MVector3 {
 					y / scale,
 					z / scale);
 		}
+	}
+	
+	public void Set(float x,float y,float z)
+	{
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 	
 	public static MVector3 VectorPlus(MVector3 vector1, MVector3 vector2)
@@ -58,7 +68,7 @@ public class MVector3 {
 		else return (float)Math.acos((double)(vector1.Dot(vector2) / (vector1.Scale() * vector2.Scale())));
 	}
 	
-	//외적으로도 각도를 구할 수 있다.
+	//?�적?�로??각도�?구할 ???�다.
 	
 //	public static float VectorAngle(MVector3 vector1,MVector3 vector2)
 //	{
