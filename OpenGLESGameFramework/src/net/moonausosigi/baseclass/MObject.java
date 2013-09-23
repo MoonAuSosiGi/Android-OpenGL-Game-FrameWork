@@ -13,14 +13,7 @@ public class MObject {
 	public Vector<MComponent> _components = new Vector<MComponent>();
 	public Vector<MObject> _childList = new Vector<MObject>();
 	private boolean _destroy = false;
-	
-	private final int NOTTHING = -1;
-	
-	protected int _resID = NOTTHING;
-	
-	
-	public void SetResID(int resID) { _resID = resID; }
-	
+
 	
 	/////////////
 	public MObject()

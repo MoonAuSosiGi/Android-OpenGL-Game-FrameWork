@@ -7,7 +7,6 @@ import net.moonausosigi.opengl.MCamera2D;
 import net.moonausosigi.scene.TitleScene;
 import net.moonausosigi.util.mDebug;
 import android.app.Activity;
-import android.graphics.Canvas;
 import android.util.DisplayMetrics;
 
 public class MSGFramework {
@@ -39,15 +38,6 @@ public class MSGFramework {
 	
 	public void SetActvity(Activity a){	_currentActivity = a;}
 	public Activity getActivity() { return _currentActivity; }
-	
-	
-	public void GameLoop(Canvas c)
-	{	
-	//	long elespedTime = Tick();
-		Open();
-		//Update(elespedTime);
-		Render(c);
-	}
 	
 	public void GameLoop(GL10 gl)
 	{
@@ -84,12 +74,7 @@ public class MSGFramework {
 		if(_currentScene != null)
 			_currentScene.Update(time,gl);	
 	}
-	public void Render(Canvas c)	
-	{ 
-		if(_currentScene != null)
-			_currentScene.Render(c);		
-	}
-	
+
 	public void Render(GL10 gl)	
 	{ 
 		if(_currentScene != null)
